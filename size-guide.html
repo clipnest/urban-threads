@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Size Guide & Measurements | Urban Threads</title>
+  <meta name="description" content="Find your fit with the Urban Threads size guide. Detailed charts for shirts, polos, tees, and trousers in cm and inches.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .size-table th, .size-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9375rem;
+    }
+    .size-table th {
+      background-color: var(--surface-2);
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .unit-toggle-btn {
+      padding: 6px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+    }
+    .unit-toggle-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wordmark">URBAN THREADS</a>
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="collections.html" class="nav-link" data-i18n="theCollection">Collections</a></li>
+          <li><a href="new-arrivals.html" class="nav-link" data-i18n="newArrivals">New Arrivals</a></li>
+          <li><a href="lookbook.html" class="nav-link">Lookbook</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="store.html" class="nav-link">Find Our Store</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle-btn">हिन्दी</button>
+        <a href="https://maps.google.com/?q=Linking+Road+Bandra+West+Mumbai" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="getDirections">Get directions</a>
+        <button class="mobile-nav-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 60px 0 80px;">
+    <div class="container" style="max-width: 900px;">
+      
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom: 32px;">
+        <div>
+          <span style="font-size:0.8125rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Precision Fit</span>
+          <h1>Find Your Size</h1>
+        </div>
+        
+        <!-- Unit Toggle -->
+        <div style="display:flex; gap:8px;">
+          <button class="unit-toggle-btn active" id="btn-in" onclick="setUnit('in')">Inches (in)</button>
+          <button class="unit-toggle-btn" id="btn-cm" onclick="setUnit('cm')">Centimetres (cm)</button>
+        </div>
+      </div>
+
+      <!-- REPLACED: PRODUCTIVE MEASURING TIPS STRIP -->
+      <div style="background:var(--surface); border:1px solid var(--border); padding:24px 32px; border-radius:var(--radius); margin-bottom:32px; display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+        <div>
+          <strong style="color:var(--accent); font-size:0.95rem;">1. Chest</strong>
+          <p style="font-size:0.8125rem; color:var(--muted); margin:4px 0 0;">Measure around the fullest part under armpits, keeping tape horizontal.</p>
+        </div>
+        <div>
+          <strong style="color:var(--accent); font-size:0.95rem;">2. Shoulders</strong>
+          <p style="font-size:0.8125rem; color:var(--muted); margin:4px 0 0;">Measure from one shoulder bone tip across natural neck curve to the other.</p>
+        </div>
+        <div>
+          <strong style="color:var(--accent); font-size:0.95rem;">3. Waist</strong>
+          <p style="font-size:0.8125rem; color:var(--muted); margin:4px 0 0;">Measure where your trousers naturally sit with one finger ease.</p>
+        </div>
+      </div>
+
+      <!-- Shirts Chart -->
+      <h2 style="font-size: 1.5rem; margin-top: 32px;">1. Shirts (Formal & Casual)</h2>
+      <div style="overflow-x: auto;">
+        <table class="size-table" id="shirts-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest</th>
+              <th>Shoulder</th>
+              <th>Length</th>
+              <th>Sleeve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>S (38)</td><td class="c-val" data-in="39.5" data-cm="100.3">39.5"</td><td class="c-val" data-in="17.5" data-cm="44.5">17.5"</td><td class="c-val" data-in="28.5" data-cm="72.4">28.5"</td><td class="c-val" data-in="25.0" data-cm="63.5">25.0"</td></tr>
+            <tr><td>M (40)</td><td class="c-val" data-in="41.5" data-cm="105.4">41.5"</td><td class="c-val" data-in="18.0" data-cm="45.7">18.0"</td><td class="c-val" data-in="29.0" data-cm="73.7">29.0"</td><td class="c-val" data-in="25.5" data-cm="64.8">25.5"</td></tr>
+            <tr><td>L (42)</td><td class="c-val" data-in="43.5" data-cm="110.5">43.5"</td><td class="c-val" data-in="18.5" data-cm="47.0">18.5"</td><td class="c-val" data-in="29.5" data-cm="74.9">29.5"</td><td class="c-val" data-in="26.0" data-cm="66.0">26.0"</td></tr>
+            <tr><td>XL (44)</td><td class="c-val" data-in="46.0" data-cm="116.8">46.0"</td><td class="c-val" data-in="19.2" data-cm="48.8">19.2"</td><td class="c-val" data-in="30.0" data-cm="76.2">30.0"</td><td class="c-val" data-in="26.5" data-cm="67.3">26.5"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Polos & Tees Chart -->
+      <h2 style="font-size: 1.5rem; margin-top: 48px;">2. Polos & T-Shirts</h2>
+      <div style="overflow-x: auto;">
+        <table class="size-table" id="polos-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest</th>
+              <th>Shoulder</th>
+              <th>Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>S</td><td class="c-val" data-in="38.0" data-cm="96.5">38.0"</td><td class="c-val" data-in="17.0" data-cm="43.2">17.0"</td><td class="c-val" data-in="27.5" data-cm="69.8">27.5"</td></tr>
+            <tr><td>M</td><td class="c-val" data-in="40.0" data-cm="101.6">40.0"</td><td class="c-val" data-in="17.7" data-cm="45.0">17.7"</td><td class="c-val" data-in="28.0" data-cm="71.1">28.0"</td></tr>
+            <tr><td>L</td><td class="c-val" data-in="42.5" data-cm="108.0">42.5"</td><td class="c-val" data-in="18.5" data-cm="47.0">18.5"</td><td class="c-val" data-in="28.7" data-cm="72.9">28.7"</td></tr>
+            <tr><td>XL</td><td class="c-val" data-in="45.0" data-cm="114.3">45.0"</td><td class="c-val" data-in="19.2" data-cm="48.8">19.2"</td><td class="c-val" data-in="29.5" data-cm="74.9">29.5"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Trousers Chart -->
+      <h2 style="font-size: 1.5rem; margin-top: 48px;">3. Trousers & Chinos</h2>
+      <div style="overflow-x: auto;">
+        <table class="size-table" id="trousers-table">
+          <thead>
+            <tr>
+              <th>Waist Size</th>
+              <th>Waist (Relaxed)</th>
+              <th>Inseam Length</th>
+              <th>Thigh</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>30</td><td class="c-val" data-in="31.0" data-cm="78.7">31.0"</td><td class="c-val" data-in="31.0" data-cm="78.7">31.0"</td><td class="c-val" data-in="24.0" data-cm="61.0">24.0"</td></tr>
+            <tr><td>32</td><td class="c-val" data-in="33.0" data-cm="83.8">33.0"</td><td class="c-val" data-in="31.5" data-cm="80.0">31.5"</td><td class="c-val" data-in="25.0" data-cm="63.5">25.0"</td></tr>
+            <tr><td>34</td><td class="c-val" data-in="35.0" data-cm="88.9">35.0"</td><td class="c-val" data-in="32.0" data-cm="81.3">32.0"</td><td class="c-val" data-in="26.0" data-cm="66.0">26.0"</td></tr>
+            <tr><td>36</td><td class="c-val" data-in="37.0" data-cm="94.0">37.0"</td><td class="c-val" data-in="32.0" data-cm="81.3">32.0"</td><td class="c-val" data-in="27.0" data-cm="68.6">27.0"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- WhatsApp Help -->
+      <div style="background:var(--surface); border:1px solid var(--border); padding:32px; border-radius:var(--radius); margin-top:60px; text-align:center;">
+        <h3 style="margin-bottom:8px;">Unsure between two sizes?</h3>
+        <p style="margin-bottom:20px;">Send our Bandra showroom team a WhatsApp message with your height and weight, and we'll advise the ideal cut.</p>
+        <a href="https://wa.me/919876543210?text=Hi%20Urban%20Threads,%20I'd%20like%20sizing%20advice" target="_blank" rel="noopener" class="btn btn-whatsapp" data-i18n="chatWhatsapp">
+          Ask on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Urban Threads. All rights reserved.</div>
+        <div>Shop 4, Linking Road, Bandra West, Mumbai</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function setUnit(unit) {
+      document.getElementById('btn-in').classList.toggle('active', unit === 'in');
+      document.getElementById('btn-cm').classList.toggle('active', unit === 'cm');
+
+      document.querySelectorAll('.c-val').forEach(el => {
+        if (unit === 'cm') {
+          el.textContent = el.getAttribute('data-cm') + ' cm';
+        } else {
+          el.textContent = el.getAttribute('data-in') + '"';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

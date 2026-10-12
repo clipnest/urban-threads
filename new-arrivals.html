@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Arrivals | Urban Threads Menswear Mumbai</title>
+  <meta name="description" content="Explore newly dropped shirts, piqué polos, and tailored trousers at Urban Threads Mumbai.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Halant:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wordmark">URBAN THREADS</a>
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="collections.html" class="nav-link" data-i18n="theCollection">Collections</a></li>
+          <li><a href="new-arrivals.html" class="nav-link active" data-i18n="newArrivals">New Arrivals</a></li>
+          <li><a href="lookbook.html" class="nav-link">Lookbook</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="store.html" class="nav-link">Find Our Store</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle-btn">हिन्दी</button>
+        <a href="https://maps.google.com/?q=Linking+Road+Bandra+West+Mumbai" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="getDirections">Get directions</a>
+        <button class="mobile-nav-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 60px 0 80px;">
+    <div class="container">
+      <div style="margin-bottom: 40px;">
+        <span style="font-size:0.8125rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Autumn 2026</span>
+        <h1 class="i18n-en">New Arrivals</h1>
+        <h1 class="i18n-hi" style="display:none;">नए परिधान</h1>
+        <p style="margin-top: 8px;">Recently added shirts, piqué knits, and trousers fresh in stock at our Bandra showroom.</p>
+      </div>
+
+      <div class="grid grid-3" id="new-arrivals-grid">
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Urban Threads. All rights reserved.</div>
+        <div>Shop 4, Linking Road, Bandra West, Mumbai</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    async function loadNewArrivals() {
+      try {
+        const res = await fetch('data/products.json');
+        const list = await res.json();
+        const newItems = list.filter(p => p.is_new);
+        const grid = document.getElementById('new-arrivals-grid');
+        
+        grid.innerHTML = newItems.map(p => `
+          <article class="product-card">
+            <div class="badge-new">New</div>
+            <a href="product.html?id=${p.id}" class="product-card-img-wrap">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </a>
+            <div class="product-card-content">
+              <span class="product-category-tag">${p.category_label}</span>
+              <h3 class="product-title"><a href="product.html?id=${p.id}">${currentLang === 'hi' ? p.name_hi : p.name}</a></h3>
+              <div class="product-fabric">${p.fabric}</div>
+              <div class="product-price">
+                ₹ ${p.price.toLocaleString('en-IN')}
+                <span class="tax-note" data-i18n="inclusiveTax">Inclusive of all taxes</span>
+              </div>
+              <div style="margin-top: 16px;">
+                <a href="product.html?id=${p.id}" class="btn btn-secondary btn-sm" style="width:100%;" data-i18n="findInStore">View piece & store fit</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    loadNewArrivals();
+  </script>
+</body>
+</html>
